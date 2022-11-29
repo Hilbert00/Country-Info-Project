@@ -1,19 +1,23 @@
 {
-  "name": "express-hello-world",
-  "version": "1.0.0",
-  "description": "Express Hello World on Render",
-  "main": "app.js",
-  "repository": "https://github.com/render-examples/express-hello-world",
-  "author": "Render Developers",
-  "license": "MIT",
-  "private": false,
-  "scripts": {
-    "start": "node app.js"
-  },
-  "dependencies": {
-    "express": "^4.16.3"
-  },
-  "engines": {
-    "node": ">=14"
-  }
+    "name": "country-info",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "author": "Nicolas Hilbert",
+    "license": "MIT",
+    "private": false,
+    "scripts": {
+        "start": "node app.js",
+        "test": "nodemon app.js localhost 3000"
+    },
+    "dependencies": {
+        "express": "^4.16.3",
+        "express-handlebars": "^6.0.6"
+    },
+    "engines": {
+        "node": ">=14"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.20"
+    }
 }

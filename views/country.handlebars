@@ -1,0 +1,96 @@
+<header>
+    <div class="Center">
+        <h1 id="main-title"><a href="/" style="color: inherit; text-decoration: none;">Country Info</a></h1>
+
+        <div id="country_form">
+            <form method="get" action="/country">
+                <input type="text" id="cname" name="cname" placeholder="Digite outro código de país" />
+                <input type="submit" value="Buscar" id="submit" />
+            </form>
+        </div>
+    </div>
+</header>
+
+<section id="country">
+    <div class="Center">
+        <div id="flexbox">
+            {{#with data}}
+                <div id="basic-info">
+                    <h1>{{name}}</h1>
+                    <h3>Nome oficial: {{officialName}}</h3>
+                    <h3>Código: {{code}}</h3>
+
+                    <div id="capitals">
+                        <h3>Capitais:</h3>
+                        <div id="capitals__cities">
+                            {{#each capitals}}
+                                <h3>{{this}}</h3>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+
+                <div id="Flag">
+                    <img src={{flag}} alt={{code}} />
+                </div>
+
+                <div id="extra-info">
+                    <div class="Info Size_40">
+                        <div class="Info__title">
+                            <h3>Moeda</h3>
+                            <hr />
+                        </div>
+                        <div class="Info__content">
+                            <p>Nome: {{currency}}</p>
+                            <p>Sigla: {{currency_initials}}</p>
+                            <p>Símbolo: {{currency_symbol}}</p>
+                        </div>
+                    </div>
+
+                    <div class="Info Size_40">
+                        <div class="Info__title">
+                            <h3>Geografia</h3>
+                            <hr />
+                        </div>
+                        <div class="Info__content">
+                            <p>Continente: {{continent}}</p>
+                            <p>Região: {{region}}</p>
+                            <p>Posição geográfica: {{latitude}}°, {{longitude}}°</p>
+                            <p>Área: {{area}} km²</p>
+                            <p>População: {{population}} habitantes</p>
+                            {{#if hasBorder}}
+                                <p>Fronteiras: {{borders}}</p>
+                            {{/if}}
+                        </div>
+                    </div>
+
+                    <div class="Info Size_20">
+                        <div class="Info__title">
+                            <h3>Idiomas</h3>
+                            <hr />
+                        </div>
+                        <div class="Info__content">
+                            {{#each languages}}
+                                <p>{{this}}</p>
+                            {{/each}}
+                        </div>
+                    </div>
+
+                    <div class="Info Size_80">
+                        <div class="Info__title">
+                            <h3>Fuso-horário(s)</h3>
+                            <hr />
+                        </div>
+                        <div class="Info__content">
+                            <p>{{timezones}}</p>
+                        </div>
+                    </div>
+                </div>
+            {{/with}}
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>Nicolas A. Hilbert - 2022</p>
+</footer>

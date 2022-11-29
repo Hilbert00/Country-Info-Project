@@ -1,0 +1,250 @@
+:root {
+    --gradient-color: linear-gradient(to bottom, #141e30 0%, #1e1e1e 100%);
+    --gradient-color2: linear-gradient(to top, #141e30 0%, #1e1e1e 100%);
+    --text-color: #f5f5f5;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.Center {
+    display: block;
+    height: inherit;
+    margin: 0 auto;
+    max-width: 1024px;
+}
+
+body {
+    background-color: #1e1e1e;
+    min-height: 100vh;
+}
+
+header {
+    background: var(--gradient-color);
+    color: #f5f5f5;
+    font-size: 1.5rem;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+header > .Center {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Center #country_form {
+    align-self: center;
+}
+
+.Center #country_form input {
+    padding: 5px;
+}
+
+.Center #country_form input#cname {
+    border: none;
+    border-radius: 12px;
+    margin-right: 15px;
+    width: 300px;
+}
+
+.Center #country_form input#submit {
+    background-color: #00000090;
+    border: solid 1px #fff;
+    border-radius: 12px;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+header h1 {
+    line-height: 100px;
+}
+
+footer {
+    align-content: center;
+    background: var(--gradient-color2);
+    bottom: 0;
+    color: var(--text-color);
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    left: 0;
+    position: relative;
+    right: 0;
+    text-align: center;
+    z-index: 1;
+}
+
+footer p {
+    align-self: center;
+}
+
+section#home {
+    background-color: #000;
+    background-image: url("/images/earth-background.png");
+    background-position: center 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+#welcome {
+    color: var(--text-color);
+    font-size: 4rem;
+    padding: 50px 0 50px;
+    text-align: center;
+}
+
+#get-country h2 {
+    color: var(--text-color);
+    font-size: 2rem;
+    text-align: center;
+}
+
+#get-country input {
+    display: block;
+    margin: 50px auto;
+}
+
+#get-country input#cname {
+    border: none;
+    box-shadow: 0 0 0 2px #00000080, 0 0 0 4px #fff;
+    border-radius: 25px;
+    font-size: 2rem;
+    padding: 20px;
+    width: 80%;
+}
+
+input#cname:focus {
+    outline: none;
+}
+
+#get-country input#submit {
+    background-color: #00000090;
+    border: solid 1px #fff;
+    border-radius: 12px;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 600;
+    height: 50px;
+    width: 200px;
+}
+
+#home p {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+}
+
+#home p a {
+    background-color: #00000090;
+    color: var(--text-color);
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
+}
+
+#flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+    justify-content: space-between;
+}
+
+Section#country {
+    min-height: calc(100vh - 220px);
+}
+
+#basic-info,
+#extra-info {
+    color: var(--text-color);
+}
+
+#basic-info {
+    flex-basis: 40%;
+    position: relative;
+}
+
+#basic-info h1 {
+    font-size: 2rem;
+}
+
+#basic-info h3 {
+    font-weight: normal;
+    margin: 10px 0;
+}
+
+#basic-info #capitals {
+    bottom: 0;
+    position: absolute;
+}
+
+#basic-info #capitals h3 {
+    margin: 5px 0;
+}
+
+#flag {
+    border-radius: 12px;
+    height: 250px;
+    max-width: 50%;
+    overflow: hidden;
+}
+
+#flag img {
+    height: inherit;
+    object-fit: cover;
+    width: 100%;
+}
+
+#extra-info {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.Info:nth-child(1) {
+    grid-column: 1/3;
+}
+
+.Info:nth-child(2) {
+    grid-column: 3/5;
+}
+
+.Info:nth-child(4) {
+    grid-column: 1/5;
+}
+
+.Info__title {
+    display: flex;
+}
+
+.Info__title hr {
+    flex-grow: 1;
+    height: 0;
+    margin: auto;
+    margin-left: 20px;
+}
+
+.Info__title::before {
+    content: " ";
+    background-image: url("/images/ellipse.png");
+    background-size: cover;
+    height: 15px;
+    margin: auto 10px auto 0;
+    width: 15px;
+}
+
+.Info__content {
+    margin-left: 30px;
+}
