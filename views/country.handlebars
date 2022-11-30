@@ -21,12 +21,7 @@
                     <h3>Código: {{code}}</h3>
 
                     <div id="capitals">
-                        <h3>Capitais:</h3>
-                        <div id="capitals__cities">
-                            {{#each capitals}}
-                                <h3>{{this}}</h3>
-                            {{/each}}
-                        </div>
+                        <h3>Capitais: {{capitals}}
                     </div>
                 </div>
 
@@ -41,9 +36,13 @@
                             <hr />
                         </div>
                         <div class="Info__content">
-                            <p>Nome: {{currency}}</p>
-                            <p>Sigla: {{currency_initials}}</p>
-                            <p>Símbolo: {{currency_symbol}}</p>
+                            {{#if currency}}
+                                <p>Nome: {{currency}}</p>
+                                <p>Sigla: {{currency_initials}}</p>
+                                <p>Símbolo: {{currency_symbol}}</p>
+                            {{else}}
+                                <p>Sem moeda oficial</p>
+                            {{/if}}
                         </div>
                     </div>
 
@@ -54,11 +53,13 @@
                         </div>
                         <div class="Info__content">
                             <p>Continente: {{continent}}</p>
-                            <p>Região: {{region}}</p>
+                            {{#if region}}
+                              <p>Região: {{region}}</p>
+                            {{/if}}
                             <p>Posição geográfica: {{latitude}}°, {{longitude}}°</p>
                             <p>Área: {{area}} km²</p>
                             <p>População: {{population}} habitantes</p>
-                            {{#if hasBorder}}
+                            {{#if borders}}
                                 <p>Fronteiras: {{borders}}</p>
                             {{/if}}
                         </div>

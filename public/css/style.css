@@ -85,7 +85,6 @@ footer p {
 }
 
 section#home {
-    background-color: #000;
     background-image: url("/images/earth-background.png");
     background-position: center 200px;
     background-repeat: no-repeat;
@@ -93,7 +92,7 @@ section#home {
     height: 100vh;
 }
 
-#welcome {
+#title {
     color: var(--text-color);
     font-size: 4rem;
     padding: 50px 0 50px;
@@ -136,14 +135,14 @@ input#cname:focus {
     width: 200px;
 }
 
-#home p {
+#info {
     bottom: 0;
     left: 0;
     position: absolute;
     right: 0;
 }
 
-#home p a {
+#info a {
     background-color: #00000090;
     color: var(--text-color);
     display: block;
@@ -172,6 +171,7 @@ Section#country {
 
 #basic-info {
     flex-basis: 40%;
+    padding-bottom: 50px;
     position: relative;
 }
 
@@ -187,10 +187,6 @@ Section#country {
 #basic-info #capitals {
     bottom: 0;
     position: absolute;
-}
-
-#basic-info #capitals h3 {
-    margin: 5px 0;
 }
 
 #flag {
@@ -222,7 +218,7 @@ Section#country {
 }
 
 .Info:nth-child(4) {
-    grid-column: 1/5;
+    grid-column: 1/6;
 }
 
 .Info__title {
@@ -247,4 +243,88 @@ Section#country {
 
 .Info__content {
     margin-left: 30px;
+}
+
+#error {
+    background-image: url("/images/place-background.png");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+@media all and (max-width: 700px) {
+    .Center {
+        max-width: 95vw;
+    }
+
+    .Center #country_form input#cname {
+        width: 50%;
+    }
+
+    header h1 {
+        align-self: center;
+        font-size: 1.5rem;
+        line-height: 1;
+        width: 30%;
+    }
+
+    footer p {
+        align-self: center;
+    }
+
+    section#home {
+        background-position: center 300px;
+    }
+
+    #title {
+        font-size: 2.5rem;
+    }
+
+    #get-country h2 {
+        font-size: 1.5rem;
+    }
+
+    #get-country input#cname {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    #flexbox {
+        gap: 50px;
+        justify-content: center;
+    }
+
+    Section#country {
+        min-height: calc(100vh - 220px);
+    }
+
+    #basic-info {
+        flex-basis: 100%;
+        padding: 0;
+        position: static;
+    }
+
+    #basic-info #capitals {
+        position: static;
+    }
+
+    #flag {
+        height: auto;
+        max-width: 100%;
+    }
+
+    #extra-info {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .Info {
+        width: 100%;
+    }
+
+    .Info__title {
+        display: flex;
+    }
 }
