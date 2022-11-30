@@ -85,6 +85,7 @@ footer p {
 }
 
 section#home {
+    background-color: #000;
     background-image: url("/images/earth-background.png");
     background-position: center 200px;
     background-repeat: no-repeat;
