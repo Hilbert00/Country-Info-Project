@@ -42,6 +42,11 @@ header > .Center {
     align-self: center;
 }
 
+.Center #country_form form {
+    display: flex;
+    justify-content: space-between;
+}
+
 .Center #country_form input {
     padding: 5px;
 }
