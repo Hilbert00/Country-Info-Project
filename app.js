@@ -28,7 +28,7 @@ app.get("/country", (req, res) => {
                 name: data.translations.por.common,
                 officialName: data.translations.por.official,
                 code: req.query.cname.toUpperCase(),
-                capitals: data.capital ? String([...data.capital]).replace(/,/g, ", ") : "Sem capital",
+                capitals: data.capital ? String(data.capital).replace(/,/g, ", ") : "Sem capital",
 
                 flag: data.flags.svg,
 
@@ -42,11 +42,11 @@ app.get("/country", (req, res) => {
                 longitude: data.latlng[1].toFixed(),
                 area: numeral(data.area).format("0.000a"),
                 population: numeral(data.population).format("0.0a"),
-                borders: data.borders ?  String([...data.borders]).replace(/,/g, ", ") : false,
+                borders: data.borders ?  String(data.borders).replace(/,/g, ", ") : false,
 
                 languages: data.languages ? data.languages : ["Sem idioma oficial"],
 
-                timezones: String([...data.timezones]).replace(/,/g, ", "),
+                timezones: String(data.timezones).replace(/,/g, ", "),
             };
 
             return countryInfo;
